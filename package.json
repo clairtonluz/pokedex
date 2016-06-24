@@ -14,7 +14,10 @@
     "gulp-clean": "^0.3.2",
     "gulp-cli": "^1.2.1",
     "gulp-concat": "^2.6.0",
+    "gulp-live-server": "0.0.30",
+    "gulp-minify": "0.0.12",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-watch": "^4.3.8",
     "run-sequence": "^1.2.1"
   }
 }
