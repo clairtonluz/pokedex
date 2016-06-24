@@ -4,14 +4,12 @@ angular.module('pokedex')
         $scope.isAba = _isAba;
         
         $scope.aba = 'home';
-
-        var _setAba = function(aba) {
-            console.log(aba);
+        
+        function _setAba(aba) {
             $scope.aba = aba;
         };
 
-        var _isAba = function(aba) {
-            console.log(this.aba == aba);
+        function _isAba(aba) {
             return $scope.aba == aba;
         };
     }]);
