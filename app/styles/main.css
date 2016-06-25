@@ -1,0 +1,34 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#logo {
+    padding: 0px 0px;
+    float: left;
+}
+
+#menuBar {
+    background: url("../views/images/bar.png");
+    background-color: red;
+}
+
+#menuBar a {
+    color:white;
+}
+
+#menuBar a:hover {
+    color: black;
+}
+#menuBar .active>a {
+    background-color: darkred;
+}
+
+#menuNav {
+    margin-bottom: 62px;
+}
+#menuNav div {
+    background: url("../views/images/bar.png");
+}
+

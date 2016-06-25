@@ -51,7 +51,9 @@ gulp.task('build-scripts-libs', function() {
 });
 
 gulp.task('build-styles', function() {
-    
+    return gulp.src(['app/styles/**/*'])
+        .pipe(concat('styles.css'))
+        .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('build-styles-libs', function() {
@@ -63,7 +65,7 @@ gulp.task('build-styles-libs', function() {
 });
 
 gulp.task('build-html', function() {
-  return gulp.src(['index.html', 'app/**/*.html'])
+  return gulp.src(['index.html', 'app/**/*.html', 'app/**/*.png'])
     .pipe(gulp.dest('public'));
 });
 
