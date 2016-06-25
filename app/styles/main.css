@@ -27,8 +27,14 @@
 
 #menuNav {
     margin-bottom: 62px;
+    border: 0;
 }
 #menuNav div {
     background: url("../views/images/bar.png");
 }
 
+
+body {
+    background: url("../views/images/background.png");
+    background-color: red;
+}
