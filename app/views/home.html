@@ -45,7 +45,10 @@
                     <div class="col-sm-4">
                         <label>Tipo:</label>
                         <span ng-repeat="t in pokemon.pokeInfo.types track by $index"
-                              class="capitalize">{{t.type.name}}</span>
+                              class="capitalize">
+                            <span ng-if="$index > 0">, </span>
+                            {{t.type.name}}
+                        </span>
                     </div>
                     <div class="col-sm-4">
                         <label>Altura:</label>
