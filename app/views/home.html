@@ -1,42 +1,64 @@
 <div class="col-lg-12 nopadding">
     <div class="col-lg-6 col-lg-offset-3">
-        <form>
+        <form ng-submit="buscar()">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Nome ou número do pokemon"/>
+                <input ng-model="nome" type="text" class="form-control"
+                       placeholder="Nome ou número do pokemon"
+                       ng-required="true"/>
                 <div class="input-group-btn">
                     <button type="submit" class="btn btn-default">Consultar</button>
                 </div>
             </div>
         </form>
+
+        <div ng-show="resultado && resultado.length == 0">
+            <p style="color: white;">Nenhum pokemon encontrado com o nome "{{nome}}"</p>
+        </div>
+
+        <div ng-show="resultado && !pokemon">
+            <div ng-repeat="p in resultado track by $index" class="col-lg-4">
+                <div class="panel panel-default" ng-click="selecionarPokemon(p)" style="cursor: pointer; margin: 10px;">
+                    <div class="panel-heading capitalize">{{p.name}}</div>
+                    <div class="panel-body">
+                        <img src="{{p.pokeInfo.sprites['front_default']}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
-<div id="display" class="col-lg-10">
+<div id="display" class="col-lg-12">
     <div class="col-lg-4 nopadding" style="margin-bottom: 10px">
         <img src="views/images/display.png" alt="Display"/>
+        <div id="pokemon-image">
+            <img ng-src="{{pokemon.pokeInfo.sprites['front_default']}}"/>
+        </div>
+
     </div>
-    <div class="col-lg-6" style="margin-bottom: 10px">
-        <div class="panel panel-default">
-            <div class="panel-heading">Bulbasaur</div>
-            <div class="panel-body">
+    <div class="col-lg-8" style="margin-bottom: 10px">
+        <div class="panel panel-default" style="min-height: 300px;">
+            <div class="panel-heading capitalize"><b>{{pokemon.pokeInfo.name}}</b></div>
+            <div class="panel-body" ng-show="pokemon">
                 <div class="row">
                     <div class="col-sm-4">
-                        <label>Nome:</label>
-                        Bulbasaur
-                    </div>
-                    <div class="col-sm-4">
-                        <label>Categoria:</label>
-                        Speed
+                        <label>Tipo:</label>
+                        <span ng-repeat="t in pokemon.pokeInfo.types track by $index"
+                              class="capitalize">{{t.type.name}}</span>
                     </div>
                     <div class="col-sm-4">
                         <label>Altura:</label>
-                        0,7 m
+                        {{pokemon.pokeInfo.height / 10}} m
                     </div>
                     <div class="col-sm-4">
                         <label>Peso:</label>
-                        6,9 Kg
+                        {{pokemon.pokeInfo.weight / 10}} Kg
                     </div>
-
+                    <div class="col-sm-4" ng-repeat="s in pokemon.pokeInfo.stats track by $index">
+                        <label class="capitalize">{{s.stat.name}}:</label>
+                        {{s.base_stat}}
+                    </div>
                 </div>
             </div>
         </div>

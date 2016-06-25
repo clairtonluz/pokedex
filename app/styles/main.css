@@ -53,6 +53,22 @@ img {
     padding: 0;
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
+
+#pokemon-image {
+    float: left;
+    position: absolute;
+    left: 91px;
+    top: 42px;
+    width: 90%;
+    z-index: 1000;
+    /*background-color: blue;*/
+    max-width: 198px;
+    padding: 0;
+}
+
 @media screen and (min-width: 900px) {
     #display .col-lg-4 {
         width: 33.33333333%;
