@@ -15,26 +15,56 @@
 }
 
 #menuBar a {
-    color:white;
+    color: white;
 }
 
 #menuBar a:hover {
     color: black;
 }
-#menuBar .active>a {
+
+#menuBar .active > a {
     background-color: darkred;
 }
 
 #menuNav {
-    margin-bottom: 62px;
+    margin-bottom: 70px;
     border: 0;
 }
+
 #menuNav div {
     background: url("../views/images/bar.png");
 }
 
+#display {
+    margin: 10px 10px 10px 0px;
+}
 
 body {
     background: url("../views/images/background.png");
     background-color: red;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.nopadding, .nopadding div {
+    padding: 0;
+}
+
+@media screen and (min-width: 900px) {
+    #display .col-lg-4 {
+        width: 33.33333333%;
+    }
+
+    #display .col-lg-6 {
+        width: 50%;
+    }
+}
+
+@media (min-width: 900px) {
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9 {
+        float: left;
+    }
 }
