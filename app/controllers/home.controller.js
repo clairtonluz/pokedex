@@ -8,6 +8,7 @@ angular.module('pokedex')
       $scope.buscar = function(){
         $scope.pokemon = null;
         BuscaPokemonService.buscaPokemon( $scope.nome , function(resultado){
+            console.log(resultado);
           if(resultado.length > 1){
             $scope.resultado = resultado;
           }else if(resultado.length == 1){

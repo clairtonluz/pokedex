@@ -3,9 +3,10 @@ angular.module('pokedex')
         $scope.setAba = _setAba;
         $scope.isAba = _isAba;
         
-        $scope.aba = 'home';
+        $scope.aba = 1;
         
         function _setAba(aba) {
+            console.log("test1");
             $scope.aba = aba;
         };
 

@@ -30,17 +30,17 @@
 </div>
 
 <div id="display" class="col-lg-12">
-    <div class="col-lg-4 nopadding" style="margin-bottom: 10px">
+    <div class="col-sm-4 nopadding" style="margin-bottom: 10px">
         <img src="views/images/display.png" alt="Display"/>
         <div id="pokemon-image">
             <img ng-src="{{pokemon.pokeInfo.sprites['front_default']}}"/>
         </div>
 
     </div>
-    <div class="col-lg-8" style="margin-bottom: 10px">
+    <div class="col-sm-8" style="margin-bottom: 10px">
         <div class="panel panel-default" style="min-height: 300px;">
             <div class="panel-heading capitalize"><b>{{pokemon.pokeInfo.name}}</b></div>
-            <div class="panel-body" ng-show="pokemon">
+            <div class="panel-body" ng-if="pokemon">
                 <div class="row">
                     <div class="col-sm-4">
                         <label>Tipo:</label>
@@ -62,8 +62,16 @@
                         <label class="capitalize">{{s.stat.name}}:</label>
                         {{s.base_stat}}
                     </div>
+                    <div class="col-sm-12" ng-controller="AbaCtrl">
+                        <ul class="nav nav-tabs">
+                            <li ng-class="{active: isAba(1)}"><a ng-click="setAba(1)">Evoluções</a></li>
+                            <li ng-class="{active: isAba(2)}"><a ng-click="setAba(2)">Habitate</a></li>
+                        </ul>
+
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
