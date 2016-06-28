@@ -16,7 +16,7 @@
         </div>
 
         <div ng-show="resultado && !pokemon">
-            <div ng-repeat="p in resultado track by $index" class="col-lg-4">
+            <div ng-repeat="p in resultado track by $index" class="col-lg-4 col-sm-4">
                 <div class="panel panel-default" ng-click="selecionarPokemon(p)" style="cursor: pointer; margin: 10px;">
                     <div class="panel-heading capitalize">{{p.name}}</div>
                     <div class="panel-body">
@@ -30,9 +30,8 @@
 </div>
 
 <div id="display" class="col-lg-12">
-    <div class="col-sm-4 nopadding" style="margin-bottom: 10px">
-        <img src="views/images/display.png" alt="Display"/>
-        <div id="pokemon-image" ng-if="pokemon.pokeInfo">
+    <div id="img-container" class="col-sm-4 nopadding " style="margin-bottom: 10px">
+        <div id="pokemon-imagee" ng-if="pokemon.pokeInfo">
             <img ng-src="{{pokemon.pokeInfo.sprites['front_default']}}"/>
         </div>
 
@@ -65,14 +64,14 @@
                     <div class="col-sm-12" ng-controller="AbaCtrl">
                         <ul class="nav nav-tabs">
                             <li ng-class="{active: isAba(1)}"><a ng-click="setAba(1)">Evoluções</a></li>
-                            <li ng-class="{active: isAba(2)}"><a ng-click="setAba(2)">Habitate</a></li>
+                            <li ng-class="{active: isAba(2)}"><a ng-click="setAba(2);$scope.carregarHabitates(pokemon.pokeInfo.id)">Habitate</a></li>
                         </ul>
 
                         <div ng-if="isAba(1)">
                             <div ng-include="views/evolution.html"></div>
                         </div>
                         <div ng-if="isAba(2)">
-
+                            <div ng-include="'views/habitat.html'"></div>
                         </div>
 
                     </div>
