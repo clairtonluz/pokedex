@@ -1,10 +1,10 @@
 Evolutions
-<div ng-controller="EvolutionCtrl as ECtrl">
+<div ng-controller="EvolutionCtrl as ECtrl" ng-init="buscarEvolucoes(pokemon.pokeInfo.id)">
     <div ng-repeat="e in evolutions track by $index" class="col-lg-4">
         <div class="panel panel-default" ng-click="HomeCtrl.selecionarPokemon(e)" style="cursor: pointer; margin: 10px;">
             <div class="panel-heading capitalize">{{e.name}}</div>
             <div class="panel-body">
-                <img src="{{e.pokeInfo.sprites['front_default']}}">
+                <img ng-src="{{e.pokeInfo.sprites['front_default']}}">
             </div>
         </div>
     </div>

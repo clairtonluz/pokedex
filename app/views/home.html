@@ -40,7 +40,7 @@
     <div class="col-sm-8" style="margin-bottom: 10px">
         <div class="panel panel-default" style="min-height: 300px;">
             <div class="panel-heading capitalize"><b>{{pokemon.pokeInfo.name}}</b></div>
-            <div class="panel-body" ng-if="pokemon">
+            <div class="panel-body" ng-if="pokemon.pokeInfo">
                 <div class="row">
                     <div class="col-sm-4">
                         <label>Tipo:</label>
@@ -69,7 +69,7 @@
                         </ul>
 
                         <div ng-if="isAba(1)">
-                            <div ng-include="views/evolution.html"></div>
+                            <div ng-include="'views/evolution.html'"></div>
                         </div>
                         <div ng-if="isAba(2)">
 
