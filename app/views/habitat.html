@@ -1,0 +1,8 @@
+<div ng-controller="HabitatsController as habitatsCtrl" ng-init="carregarHabitates(pokemon.pokeInfo.id)">
+    <div class="col-sm-12" style="margin-top:10px;" ng-if="habitat">
+        <div>Habitate: {{habitat.name}}</div>
+    </div>
+    <div class="col-sm-12" style="margin-top:10px;" ng-if="errorNotFound">
+        <div>{{errorNotFound}}</div>
+    </div>
+</div>
